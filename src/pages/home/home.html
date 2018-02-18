@@ -3,16 +3,61 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Croque-O-Meter</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <!--<h3>Ionic Menu Starter</h3>
 
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button ion-button secondary menuToggle>Toggle Menu</button>-->
+
+
+  <div id="headerBox">
+    <p>DAYS SINCE LAST CROQUE</p>
+    <p>current: {{currentDate}}</p>
+    <p>last: {{lastDate}}</p>
+  </div>
+  <div id="gaugeBox">
+    <!-- Injecting radial gauge -->
+    <canvas id="gaugeCanvas"
+          data-type="radial-gauge"
+          data-width="400"
+          data-height="400"
+          data-units=""
+          data-title="false"
+          data-value="3.2"
+          data-min-value="0"
+          data-max-value="5"
+          data-major-ticks="0,1,2,3,4,5"
+          data-minor-ticks="2"
+          data-stroke-ticks="false"
+          data-highlights='[
+              { "from": 1, "to": 2, "color": "rgba(255,255,0,.7)" },
+              { "from": 2, "to": 5, "color": "rgba(255,0,0,.7)" }
+          ]'
+          data-color-plate="#222"
+          data-color-major-ticks="#f5f5f5"
+          data-color-minor-ticks="#ddd"
+          data-color-title="#fff"
+          data-color-units="#ccc"
+          data-color-numbers="#eee"
+          data-color-needle-start="rgba(240, 128, 128, 1)"
+          data-color-needle-end="rgba(255, 160, 122, .9)"
+          data-value-box="false"
+          data-animation-rule="bounce"
+          data-animation-duration="500"
+          data-font-value="Led"
+          data-animated-value="true"
+    ></canvas>
+  </div>
+
+  <div id="eatButtonBox">
+    <button ion-button large (click)="doConfirm()">EAT CROQUE</button>
+    <button ion-button large (click)="doDebug()">debug</button>
+  </div>
 </ion-content>
